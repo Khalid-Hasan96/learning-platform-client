@@ -7,13 +7,13 @@ import './CourseContainer.css'
 const CourseContainer = ({ course }) => {
       const { title, img, duration, price } = course;
       return (
-            <Card className='course-detail'>
-                  <Card.Img className='border p-2' height="220" variant="top" src={img} />
+            <Card>
+                  <Card.Img className='p-2' height="250" variant="top" src={img} />
                   <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>
-                              <p>{duration} week</p>
-                              <p>${price}</p>
+                              <p className='mt-4'>Duration: {duration} week</p>
+                              <p>Price: ${price}</p>
                         </Card.Text>
 
                   </Card.Body>

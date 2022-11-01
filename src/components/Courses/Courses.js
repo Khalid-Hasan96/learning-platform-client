@@ -9,19 +9,19 @@ import './Courses.css'
 const Courses = () => {
       const allCourses = useLoaderData();
       return (
-            <div>
-                  <Container className='mt-4'>
-                        <div className='course-container'>
-                              <div>
-                                    <LeftSide></LeftSide>
-                              </div>
 
-                              <div>
-                                    <RightSide allCourses={allCourses}></RightSide>
-                              </div>
+            <Container className='mt-4'>
+                  <div className='course-container'>
+                        <div>
+                              <LeftSide></LeftSide>
                         </div>
-                  </Container >
-            </div >
+
+                        <div>
+                              <RightSide allCourses={allCourses}></RightSide>
+                        </div>
+                  </div>
+            </Container >
+
       );
 };
 

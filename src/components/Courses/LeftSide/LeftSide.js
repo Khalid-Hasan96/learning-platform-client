@@ -11,7 +11,7 @@ const LeftSide = () => {
 
       return (
             <div>
-                  <h2 className='mb-4 text-center'>{courses.length} Courses to Start Your Journey</h2>
+                  <h2 className='mb-4 text-center'>Courses</h2>
                   {
                         courses.map(course => <ShowCourses
                               key={course.id}

@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const ShowCourses = ({ course }) => {
       const { name } = course;
       return (
-            <div>
+            <div className='text-center'>
                   <ListGroup>
                         <ListGroup.Item className='mb-2' action href="#link1">
                               {name}

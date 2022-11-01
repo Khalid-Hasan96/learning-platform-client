@@ -1,0 +1,5 @@
+.blog-card {
+      background: linear-gradient(145deg, #a6f2ffa4, #00c3e595);
+      box-shadow: 13px 13px 26px #989898,
+            -13px -13px 26px #ffffff;
+}
