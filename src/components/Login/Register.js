@@ -3,13 +3,21 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
-import './FormStyle.css'
+import './FormStyle.css';
 
-const Login = () => {
+const Register = () => {
       return (
             <Container className='mt-3'>
-                  <h1 className='text-center mb-4'>Login</h1>
+                  <h1 className='text-center mb-4'>Register</h1>
                   <Form className='form-style p-3'>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                              <Form.Label>Name</Form.Label>
+                              <Form.Control type="text" placeholder="Enter Name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                              <Form.Label>Photo URL</Form.Label>
+                              <Form.Control type="text" placeholder="Enter PhotoURL" />
+                        </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                               <Form.Label>Email address</Form.Label>
                               <Form.Control type="email" placeholder="Enter email" />
@@ -23,11 +31,11 @@ const Login = () => {
                               Submit
                         </Button>
                         <Form.Text className="text-muted">
-                              <small>Didn't have account? Please <Link to='/register'>Register</Link></small>
+                              <small>Already have an account? Please <Link to='/login'>Login</Link></small>
                         </Form.Text>
                   </Form>
             </Container>
       );
 };
 
-export default Login;
+export default Register;
