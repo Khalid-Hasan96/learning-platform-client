@@ -1,10 +1,11 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const Login = () => {
       return (
-            <div>
+            <Container>
                   <h1 className='text-center mb-4'>Login</h1>
                   <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -23,7 +24,7 @@ const Login = () => {
 
                         </Form.Text>
                   </Form>
-            </div>
+            </Container>
       );
 };
 

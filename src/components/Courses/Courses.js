@@ -1,23 +1,27 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import LeftSide from '../LeftSide/LeftSide';
+import LeftSide from './LeftSide/LeftSide'
+import { useLoaderData } from 'react-router-dom';
+import RightSide from './RightSide/RightSide';
+import './Courses.css'
+
 
 const Courses = () => {
+      const allCourses = useLoaderData();
       return (
             <div>
                   <Container className='mt-4'>
-                        <Row>
-                              <Col lg="3">
+                        <div className='course-container'>
+                              <div>
                                     <LeftSide></LeftSide>
-                              </Col>
-                              <Col>
+                              </div>
 
-                              </Col>
-                        </Row>
-                  </Container>
-            </div>
+                              <div>
+                                    <RightSide allCourses={allCourses}></RightSide>
+                              </div>
+                        </div>
+                  </Container >
+            </div >
       );
 };
 

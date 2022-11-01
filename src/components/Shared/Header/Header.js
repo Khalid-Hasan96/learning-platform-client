@@ -11,16 +11,16 @@ const Header = () => {
       return (
             <Navbar bg="light" expand="lg">
                   <Container>
-                        <Navbar.Brand href='/' className='d-flex align-items-center'>
-
-                              <Image
-                                    className='me-2'
-                                    src={logo}
-                                    width="45"
-                                    height="45"
-                              ></Image>
-                              <span className='fw-bold fs-2 text-dark'>Learn to Code</span>
-
+                        <Navbar.Brand>
+                              <Link to='/' className='d-flex align-items-center'>
+                                    <Image
+                                          className='me-2'
+                                          src={logo}
+                                          width="45"
+                                          height="45"
+                                    ></Image>
+                                    <span className='fw-bold fs-2 web-title'>Learn to Code</span>
+                              </Link>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
