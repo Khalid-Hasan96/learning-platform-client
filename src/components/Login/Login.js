@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import './FormStyle.css';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -12,6 +12,12 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 const Login = () => {
       const [error, setError] = useState('');
       const { googleSignIn, githubSignIn, signIn } = useContext(AuthContext);
+
+      const navigate = useNavigate();
+      const location = useLocation();
+
+      const from = location.state?.from?.pathname || '/';
+
       const handleGoogleSignIn = () => {
             const provider = new GoogleAuthProvider();
 
@@ -19,6 +25,7 @@ const Login = () => {
                   .then(result => {
                         const user = result.user;
                         setError('');
+                        navigate(from, { replace: true });
                         console.log(user)
                   })
                   .catch(error => {
@@ -33,6 +40,7 @@ const Login = () => {
                   .then(result => {
                         const user = result.user;
                         setError('');
+                        navigate(from, { replace: true });
                         console.log(user)
                   })
                   .catch(error => {
@@ -50,8 +58,9 @@ const Login = () => {
             signIn(email, password)
                   .then(result => {
                         const user = result.user;
-                        setError('');
                         form.reset();
+                        setError('');
+                        navigate(from, { replace: true });
                   })
                   .catch(error => {
                         console.error(error)

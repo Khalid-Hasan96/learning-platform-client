@@ -9,6 +9,7 @@ import Blog from './components/Blog/Blog';
 import Register from './components/Login/Register';
 import CourseDetails from './components/Courses/CourseDetails/CourseDetails';
 import Checkout from './components/Checkout/Checkout';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/checkout',
-        element: <Checkout></Checkout>
+        element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
       }
     ]
   }
