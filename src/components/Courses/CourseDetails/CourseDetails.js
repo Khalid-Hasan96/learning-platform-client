@@ -15,7 +15,7 @@ const CourseDetails = () => {
                         <Button variant='info'>Download</Button>
                   </div>
                   <Card className='mt-4'>
-                        <Card.Img variant="top" src={img} />
+                        <Card.Img variant="top" height='550' src={img} />
                         <Card.Body>
                               <Card.Title>{title}</Card.Title>
                               <Card.Text>
