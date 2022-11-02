@@ -46,26 +46,26 @@ const Register = () => {
             const email = form.email.value;
             const password = form.password.value;
             const name = form.name.value;
-            const photo = form.photo.value;
+            const photoURL = form.photoURL.value;
             createUser(email, password)
                   .then(result => {
                         const user = result.user;
-                        handleUpdateUserProfile(name, photo);
                         setError('');
                         form.reset();
+                        handleUpdateUserProfile(name, photoURL);
                         console.log(user)
                   })
                   .catch(error => {
                         console.error(error)
                         setError(error.message)
                   })
-            console.log(email, password, name, photo)
+            console.log(email, password, name, photoURL)
             form.reset();
 
       }
 
-      const handleUpdateUserProfile = (name, photo) => {
-            const profile = { displayName: name, photoURL: photo }
+      const handleUpdateUserProfile = (name, photoURL) => {
+            const profile = { displayName: name, photoURL: photoURL }
             updateUserProfile(profile)
                   .then(() => { })
                   .catch(error => console.error(error))
@@ -81,7 +81,7 @@ const Register = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                               <Form.Label>Photo URL</Form.Label>
-                              <Form.Control type="text" name='photo' placeholder="Enter PhotoURL" />
+                              <Form.Control type="text" name='photoURL' placeholder="Enter PhotoURL" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                               <Form.Label>Email address</Form.Label>
