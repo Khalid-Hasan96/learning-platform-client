@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ShowCourses = ({ course }) => {
       const { name, course_id } = course;
-      console.log(course)
+
       return (
             <div className='text-center'>
                   <ListGroup>

@@ -7,7 +7,7 @@ const CourseDetails = () => {
       const singleCourse = useLoaderData();
 
       const { img, title, details, duration, price } = singleCourse;
-      console.log(singleCourse)
+
       return (
             <Container className='mt-4'>
                   <div className='d-flex justify-content-between align-items-center'>
