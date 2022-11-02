@@ -21,7 +21,6 @@ const CourseContainer = ({ course }) => {
                   <Card.Footer>
                         <Link to={`/course-details/${_id}`}><Button className='w-100' variant="info">Show Details</Button></Link>
                   </Card.Footer>
-
             </Card>
       );
 };
