@@ -11,3 +11,4 @@ Live Site Link:
 * than on the client side I create some folder like components, layout, auth provider, assets
 * than I design the website & connect the routes on the app folder
 * than I fetch data from server and implement those data on client site 
+* lastly I host server site on vercel and client side on firebase

@@ -15,6 +15,7 @@ const Home = () => {
                         </Col>
                         <Col lg='6'>
                               <Image
+                                    className='head-img'
                                     src={cover}
                               ></Image>
                         </Col>
