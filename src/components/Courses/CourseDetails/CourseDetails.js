@@ -1,14 +1,18 @@
 import React, { createRef } from 'react';
 import { Button, Container } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Pdf from 'react-to-pdf';
 
 const ref = createRef();
 const CourseDetails = () => {
       const singleCourse = useLoaderData();
-
-      const { img, title, details, duration, price } = singleCourse;
+      const { _id, img, title, details, duration, price } = singleCourse;
+      const navigate = useNavigate();
+      const handleAccess = () => {
+            navigate(`/checkout/${_id}`, { state: { title, price } })
+      }
+      console.log('single course courseDetails', singleCourse)
 
       return (
             <Container className='mt-4'>
@@ -28,7 +32,7 @@ const CourseDetails = () => {
                                     <p>Duration: {duration} week</p>
                                     <p>Price: <span className='fs-3 fw-bold'>${price}</span></p>
                               </Card.Text>
-                              <Link to='/checkout'><Button variant="primary">Get Premium Access</Button></Link>
+                              <Button onClick={handleAccess} variant="primary">Get Premium Access</Button>
                         </Card.Body>
                   </Card>
             </Container>

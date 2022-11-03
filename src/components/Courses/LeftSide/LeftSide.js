@@ -4,7 +4,7 @@ import ShowCourses from './ShowCourses/ShowCourses';
 const LeftSide = () => {
       const [courses, setCourses] = useState([]);
       useEffect(() => {
-            fetch('http://localhost:5000/courses')
+            fetch('https://learning-platform-server-drab-omega.vercel.app/all-courses')
                   .then(res => res.json())
                   .then(data => setCourses(data))
       }, [])
@@ -12,12 +12,15 @@ const LeftSide = () => {
       return (
             <div>
                   <h2 className='mb-4 text-center'>Courses</h2>
+
                   {
                         courses.map(course => <ShowCourses
-                              key={course.id}
+                              key={course._id}
                               course={course}
                         ></ShowCourses>)
                   }
+
+
             </div>
       );
 };

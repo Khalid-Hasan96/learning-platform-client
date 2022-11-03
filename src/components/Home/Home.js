@@ -9,8 +9,8 @@ const Home = () => {
             <Container className='mt-5 rounded home-bg'>
                   <Row className='align-items-center'>
                         <Col lg='6'>
-                              <h1>Hello Programmer.</h1>
-                              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum obcaecati adipisci sequi ab placeat quidem assumenda dolorum expedita eius velit architecto minima autem laudantium eum enim, dolor vel a. Dolores, laudantium? Ipsam rerum praesentium nam obcaecati laborum ad at exercitationem aliquid rem dolorem modi nesciunt, necessitatibus sed molestias fuga itaque reprehenderit reiciendis quisquam eum aspernatur eveniet cupiditate! Dolorem voluptatum vel repudiandae amet consectetur, pariatur sapiente enim suscipit saepe impedit sed voluptates a architecto ullam ipsum eum ut, quaerat vitae ex iusto velit? Placeat aperiam maxime quam repellat, est ducimus! Rem neque dolore eos tempora cupiditate repellat distinctio aut quam numquam!</p>
+                              <h1>Hello Programmers</h1>
+                              <p>Welcome to <span className='fw-bold'>Learn to Code</span>! Are you a programmer or do you want to be a programmer? But didn't know where to start? Well, here we are, one of the greatest learning site on the internet. We have some best courses for you to start your journey. We design our courses for all kinds of people. If you are a beginner or a veteran it doesn't matter who you are. As long as you are interested to learn we are here to give you all the support you need.</p>
                               <Link to='/courses'><Button variant='primary'>Get Started</Button></Link>
                         </Col>
                         <Col lg='6'>

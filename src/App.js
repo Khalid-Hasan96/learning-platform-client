@@ -10,6 +10,9 @@ import Register from './components/Login/Register';
 import CourseDetails from './components/Courses/CourseDetails/CourseDetails';
 import Checkout from './components/Checkout/Checkout';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import ShowCourses from './components/Courses/LeftSide/ShowCourses/ShowCourses';
+import LeftSide from './components/Courses/LeftSide/LeftSide';
 
 const router = createBrowserRouter([
   {
@@ -23,13 +26,14 @@ const router = createBrowserRouter([
       {
         path: '/courses',
         element: <Courses></Courses>,
-        loader: () => fetch('http://localhost:5000/all-courses')
+        loader: () => fetch('https://learning-platform-server-drab-omega.vercel.app/all-courses')
       },
       {
         path: '/course-details/:id',
         element: <CourseDetails></CourseDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+        loader: ({ params }) => fetch(`https://learning-platform-server-drab-omega.vercel.app/course/${params.id}`)
       },
+
       {
         path: '/faq',
         element: <FAQ></FAQ>
@@ -47,10 +51,15 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: '/checkout',
-        element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
+        path: '/checkout/:id',
+        element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://learning-platform-server-drab-omega.vercel.app/course/${params.id}`)
       }
     ]
+  },
+  {
+    path: '*',
+    element: <ErrorPage></ErrorPage>
   }
 ])
 
